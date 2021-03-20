@@ -1,12 +1,18 @@
 require('dotenv').config();
 
-const {Client,MessageEmbed} = require('discord.js');
-
+const {Client,MessageEmbed,Collection} = require('discord.js');
+const fs = require('fs');
 const client = new Client({
     partials: ['MESSAGE','REACTION']
 });
+client.commands = new Collection();
 const PREFIX = "-";
-
+const commandFiles = fs.readdirSync('src/commands/').filter(file => file.endsWith('.js'));
+for(const file of commandFiles){
+    const command = require(`./commands/${file}`);
+ 
+    client.commands.set(command.name, command);
+}
 client.on('ready',()=>{
     console.log(`${client.user.username} has logged in.`);
 });
@@ -31,6 +37,11 @@ client.on('message',(message)=>{
            //const member = message.guild.members.cache.get(args[0]);
             message.channel.send(':poop:');
        }
+       if(CMD_NAME === 'play'){
+        client.commands.get('play').execute(message, args);
+    } if(CMD_NAME === 'pause'){
+        client.commands.get('pause').execute(message,args);
+    }
    }
 });
 
