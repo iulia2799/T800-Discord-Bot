@@ -42,6 +42,9 @@ client.on('message',(message)=>{
     } if(CMD_NAME === 'pause'){
         client.commands.get('pause').execute(message,args);
     }
+    if(CMD_NAME === 'leave'){
+        client.command.get('leave').execute(message,args);
+    }
    }
 });
 
