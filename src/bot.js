@@ -42,9 +42,20 @@ client.on('message',(message)=>{
     } if(CMD_NAME === 'pause'){
         client.commands.get('pause').execute(message,args);
     }
+<<<<<<< HEAD
     if(CMD_NAME === 'leave'){
         client.command.get('leave').execute(message,args);
     }
+=======
+       if(CMD_NAME==='leave'){
+           client.commands.get('leave').execute(message,args);
+       }
+       if(CMD_NAME==='shutdown'){
+           message.channel.send('Shutting down...').then(m => {
+               client.destroy();
+           });
+       }
+>>>>>>> 8ba9d0d8d4d2ba83d1e98c708f54f4b1abeaa8f7
    }
 });
 
