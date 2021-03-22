@@ -38,12 +38,18 @@ client.on('message',(message)=>{
             message.channel.send(':poop:');
        }
        if(CMD_NAME === 'play'){
-        client.commands.get('play').execute(message, args);
+        client.commands.get('play').execute(message, args,CMD_NAME);
     } if(CMD_NAME === 'pause'){
         client.commands.get('pause').execute(message,args);
     }
        if(CMD_NAME==='leave'){
            client.commands.get('leave').execute(message,args);
+       }
+       if(CMD_NAME === 'skip'){
+           client.commands.get('play').execute(message,args,CMD_NAME);
+       }
+       if(CMD_NAME === 'stop'){
+           client.commands.get('play').execute(message,args,CMD_NAME);
        }
        if(CMD_NAME==='shutdown'){
            message.channel.send('Shutting down...').then(m => {
