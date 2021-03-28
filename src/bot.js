@@ -53,14 +53,14 @@ client.on('message',(message)=>{
            client.commands.get('play').execute(message,args,CMD_NAME);
        }
        if(CMD_NAME === 'gif'){
-           client.command.get('gif').execute(message,args);
+           client.commands.get('gif').execute(message,args);
        }
        if(CMD_NAME==='shutdown'){
            message.channel.send('Shutting down...').then(m => {
                client.destroy();
            });
        }
->>>>>>> 8ba9d0d8d4d2ba83d1e98c708f54f4b1abeaa8f7
+//>>>>>>> 8ba9d0d8d4d2ba83d1e98c708f54f4b1abeaa8f7
    }
 });
 
