@@ -42,11 +42,7 @@ client.on('message',(message)=>{
     } if(CMD_NAME === 'pause'){
         client.commands.get('pause').execute(message,args);
     }
-<<<<<<< HEAD
-    if(CMD_NAME === 'leave'){
-        client.command.get('leave').execute(message,args);
-    }
-=======
+
        if(CMD_NAME==='leave'){
            client.commands.get('leave').execute(message,args);
        }
@@ -55,6 +51,9 @@ client.on('message',(message)=>{
        }
        if(CMD_NAME === 'stop'){
            client.commands.get('play').execute(message,args,CMD_NAME);
+       }
+       if(CMD_NAME === 'gif'){
+           client.command.get('gif').execute(message,args);
        }
        if(CMD_NAME==='shutdown'){
            message.channel.send('Shutting down...').then(m => {
