@@ -56,9 +56,13 @@ client.on('message',(message)=>{
            client.commands.get('gif').execute(message,args);
        }
        if(CMD_NAME==='shutdown'){
-           message.channel.send('Shutting down...').then(m => {
-               client.destroy();
-           });
+           if(message.author.id === '686877248447578150' || message.author.id === '549331714552496149')
+               message.channel.send('Shutting down...').then(m => {
+                   client.destroy();
+               });
+           else{
+               message.channel.send('You do not own me');
+           }
        }
 //>>>>>>> 8ba9d0d8d4d2ba83d1e98c708f54f4b1abeaa8f7
    }
