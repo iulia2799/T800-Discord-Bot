@@ -24,6 +24,7 @@
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
     "ffmpeg-static": "^4.2.8",
+    "mongoose": "^5.12.3",
     "node-fetch": "^2.6.1",
     "yt-search": "^2.7.4",
     "ytdl-core": "^4.5.0"
