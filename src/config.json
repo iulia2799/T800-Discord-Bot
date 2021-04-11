@@ -1,5 +1,5 @@
 {
   "token": "",
   "prefix": "!",
-  "mongoPath": "mongodb://localhost:27017/discordbot"
+  "mongoPath": "mongodb+srv://admin:STHMaUzAbg4SHjn3@cluster0.e2izk.mongodb.net/discord-bot?retryWrites=true&w=majority"
 }

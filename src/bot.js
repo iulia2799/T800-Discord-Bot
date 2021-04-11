@@ -70,8 +70,8 @@ client.on('message',(message)=>{
            client.commands.get('gif').execute(message,args);
        }
        //if(CMD_NAME === 'level'){
-          // client.commands.get('level').execute(message);
-      // }
+         //  client.commands.get('level').execute(message);
+      //}
        if(CMD_NAME==='shutdown'){
            if(message.author.id === '686877248447578150' || message.author.id === '549331714552496149')
                message.channel.send('Shutting down...').then(m => {
