@@ -9,14 +9,14 @@ module.exports = {
 
             const { guild, member } = message
 
-            addXP(guild.id, member.id, len, message)
+            addXP(guild.id, member.id,member, len, message)
 
     }
 }
 
-const getNeededXP = level => level+1500
+const getNeededXP = level => level+150
 
-const addXP = async (guildId,userId,xpToAdd,message) => {
+const addXP = async (guildId,userId,member,xpToAdd,message) => {
     await mongo().then(async mongoose =>{
         try{
            const result =  await profileSchema.findOneAndUpdate({
@@ -90,6 +90,34 @@ const addXP = async (guildId,userId,xpToAdd,message) => {
                     message.reply(embed);
 
                 }
+            }
+            if(level === 1){
+                let role = message.guild.roles.cache.find(r => r.name === "Rebel");
+                member.roles.add(role).catch(console.error);
+            }
+            if(level === 2){
+                let role = message.guild.roles.cache.find(r => r.name === "T800");
+                member.roles.add(role).catch(console.error);
+            }
+            if(level === 3){
+                let role = message.guild.roles.cache.find(r => r.name === "T1000");
+                member.roles.add(role).catch(console.error);
+            }
+            if(level === 4){
+                let role = message.guild.roles.cache.find(r => r.name === "SkyNet");
+                member.roles.add(role).catch(console.error);
+            }
+            if(level === 5){
+                let role = message.guild.roles.cache.find(r => r.name === "Pepe the Terminator");
+                member.roles.add(role).catch(console.error);
+            }
+            if(level === 6){
+                let role = message.guild.roles.cache.find(r => r.name === "Vision");
+                member.roles.add(role).catch(console.error);
+            }
+            if(level === 7){
+                let role = message.guild.roles.cache.find(r => r.name === "Budha");
+                member.roles.add(role).catch(console.error);
             }
         }finally {
             mongoose.connection.close();
