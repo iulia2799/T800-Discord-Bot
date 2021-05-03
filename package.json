@@ -26,7 +26,7 @@
     "ffmpeg-static": "^4.2.8",
     "mongoose": "^5.12.4",
     "node-fetch": "^2.6.1",
-    "yt-search": "^2.7.4",
+    "yt-search": "^2.8.0",
     "ytdl-core": "^4.5.0"
   },
   "devDependencies": {

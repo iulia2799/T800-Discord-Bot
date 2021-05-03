@@ -34,27 +34,32 @@ client.on('message',(message)=>{
    //console.log(`[${message.author.tag}]: ${message.content}`);
     const len = message.content.length;
     client.commands.get('level').execute(message,len);
-   if(message.content == 'how to embed'){
-       const embed = new MessageEmbed().setTitle('a slick little embed.').setColor(0xff0000).setDescription('hello');
-       message.channel.send(embed);
-   }
-   if(message.content=='hello'){
-       message.reply('hello');
+
+   if(message.content=='-help'){
+       const Help = new MessageEmbed()
+           .setTitle('HELP BOT')
+           .setColor(0x00ff00)
+           .setDescription('Hello my name is T800! \n You can use the following commands: \n ' +
+               'FOR MUSIC : -play(followed by the name of the song or URL;can be used multiple times to create a queue),-skip,-stop\n'+
+           'FOR GIFS: -gif\n'+
+           'TO CHECK EXP:-level\n'+
+           'TO CREATE/DELETE ROLES: -role create yourrole #yourhexcodecolor, -role delete yourrole/yourroleID.\n'+
+           'We encourage chat activity and those who do a lot receive special roles.\n'+
+           'For now the admin has to set these ROLES: Rebel,T800,T1000,SkyNet,Pepe the Terminator,Vision, Budha and DJ.\n' +
+               'The admin can choose whatever color he/she/they like through the -role create command!\n' +
+               'More updates will come soon!!!');
+       message.channel.send(Help);
    }
    if(message.content.startsWith(PREFIX)){
        const [CMD_NAME, ...args] = message.content
            .trim()
            .substring(PREFIX.length)
            .split(/\s+/);
-       if(CMD_NAME == "react"){
-           if(args.length==0) return message.reply('please refer message');
-           //const member = message.guild.members.cache.get(args[0]);
-            message.channel.send(':poop:');
+       if(CMD_NAME === "role"){
+           client.commands.get('role').run(message,args);
        }
        if(CMD_NAME === 'play'){
         client.commands.get('play').execute(message, args,CMD_NAME);
-    } if(CMD_NAME === 'pause'){
-        client.commands.get('pause').execute(message,args);
     }
 
        if(CMD_NAME==='leave'){
