@@ -1,0 +1,5 @@
+{
+  "token": "",
+  "prefix": "!",
+  "mongoPath": "mongodb+srv://admin:95wX6AGXueTJ5h9@cluster0.e2izk.mongodb.net/discord-bot?retryWrites=true&w=majority"
+}
