@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "nyc mocha",
     "start": "node ./src/bot.js",
     "dev": "nodemon ./src/bot.js"
   },
@@ -26,10 +26,13 @@
     "ffmpeg-static": "^4.2.8",
     "mongoose": "^5.12.4",
     "node-fetch": "^2.6.1",
+    "nyc": "^15.1.0",
     "yt-search": "^2.8.0",
     "ytdl-core": "^4.5.0"
   },
   "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.4.0",
     "nodemon": "^2.0.7"
   }
 }
